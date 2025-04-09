@@ -11,8 +11,14 @@ const ExpenceTable = ({ expences }) => {
     console.log('filtered itemssssssss', filterdItems)
 
 
+    //total 
+    const sumHandler = filterdItems.reduce((acc, current) => {
+
+        return acc + Number(current.amount)
 
 
+    }, 0)
+    console.log(sumHandler)
     return (
 
         <>
@@ -58,6 +64,10 @@ const ExpenceTable = ({ expences }) => {
                             })) : (<tr><td colSpan={3}>Expence Not Found</td></tr>)
                         }
 
+                        <tr className="total">
+                            <td colSpan={2}>Total</td>
+                            <td>{sumHandler}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

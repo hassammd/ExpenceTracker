@@ -77,3 +77,6 @@ table select{
   font-weight: 700;
   outline: none;
 }
+.total{
+  font-weight: bold;
+}

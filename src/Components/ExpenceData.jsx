@@ -1,7 +1,7 @@
 export const ExpenceData = [
 
     {
-        title: 'milk',
+        title: 'Milk',
         category: "grocery",
         amount: '100'
     },

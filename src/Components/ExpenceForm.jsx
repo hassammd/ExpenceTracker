@@ -57,6 +57,7 @@ const ExpenceForm = ({ expences, setExpences }) => {
             setTitle('')
             setCategory('')
             setAmount('')
+            setEmail('')
             setErrors({})
         }
         // if (!newExpences.title) {
