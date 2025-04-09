@@ -80,3 +80,14 @@ table select{
 .total{
   font-weight: bold;
 }
+
+
+@media screen and (max-width:767px){
+
+  .main{
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 50px;
+    align-items: start
+  }
+}
