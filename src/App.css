@@ -35,10 +35,15 @@ form input, form select{
 }
 table{
   border-collapse: collapse;
+  width: 100%;
 }
 table tr{
   border-bottom: 1px solid #7a7a7a36;
   
+}
+table tr th{
+  padding: 10px;
+  background-color: #7792c35e;
 }
 table tr td{
   padding: 6px 0px;
@@ -53,4 +58,14 @@ table tr:nth-child(odd){
   position: absolute;
   bottom: -19px;
   font-size: 14px;
+}
+.form_heading{
+  margin: 0px;
+}
+.table_heading{
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+form button{
+  background-color: #7792c35e;
 }

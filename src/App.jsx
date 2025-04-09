@@ -11,7 +11,7 @@ function App() {
   console.log(expences)
   return (
     <>
-      <h3>Expence Tracker</h3>
+      <h2>Expence Tracker</h2>
       <div className='main'>
         <ExpenceForm expences={expences} setExpences={setExpences} />
         <ExpenceTable expences={expences} />
