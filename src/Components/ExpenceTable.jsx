@@ -1,34 +1,61 @@
+import { useState } from "react"
+
 const ExpenceTable = ({ expences }) => {
+    console.log('These are expences', expences)
+    const [filterItem, setFilterItems] = useState('')
+
+
+    //filter
+
+    const filterdItems = filterItem === '' || filterItem === 'all' ? expences : expences.filter((item) => item.category.toLowerCase() === filterItem.toLowerCase())
+    console.log('filtered itemssssssss', filterdItems)
+
+
+
+
     return (
 
         <>
             <div>
 
-                <h3 className="table_heading">your Expences</h3>
+                <h3 className="table_heading">Your Expences</h3>
                 <table>
                     <tbody>
 
 
                         <tr>
+
                             <th>Title</th>
-                            <th>Category</th>
+                            <th>
+                                <select onChange={(e) => setFilterItems(e.target.value)}>
+
+                                    <option hidden value="">Select Category</option>
+                                    <option value="all">All</option>
+                                    <option value="grocery">Grocery</option>
+                                    <option value="education">Education</option>
+                                    <option value="bill">Bill</option>
+
+
+                                </select>
+                            </th>
                             <th>Amount</th>
                         </tr>
-                        <tr>
+                        {/* <tr>
                             <td>Milk</td>
                             <td>Grocery</td>
                             <td>100</td>
-                        </tr>
+                        </tr> */}
 
                         {
 
-                            expences.map((items, index) => {
+
+                            filterdItems.length > 0 ? (filterdItems.map((items, index) => {
                                 return <tr key={index}>
                                     <td>{items.title}</td>
                                     <td>{items.category}</td>
                                     <td>{items.amount}</td>
                                 </tr>
-                            })
+                            })) : (<tr><td colSpan={3}>Expence Not Found</td></tr>)
                         }
 
                     </tbody>

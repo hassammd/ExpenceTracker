@@ -17,7 +17,7 @@ const ExpenceForm = ({ expences, setExpences }) => {
 
         title: [{ required: true, message: 'Enter Your Title' }, { minlength: 5, message: 'Title should be at least 5 characters long' }],
         category: [{ required: true, message: 'Please Select Category' }],
-        amount: [{ required: true, message: 'Enter Amount' }, { VlidNumber: (value) => !isNaN(value) && Number(value) > 0, message: 'Enter Valid number' }],
+        amount: [{ required: true, message: 'Enter Amount' }, { VlidNumber: (value) => !isNaN(value) && Number(value) > 0, message: 'Enter Valid Amount' }],
         email: [{ required: true, message: 'Enter Your Email' }, { pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, message: 'Please Enter Valid Email' }]
 
     }
