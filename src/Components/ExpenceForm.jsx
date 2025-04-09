@@ -86,7 +86,7 @@ const ExpenceForm = ({ expences, setExpences }) => {
     return (
 
         <>
-
+            <h2>Add Your Expences</h2>
             <form onSubmit={submitHandler}>
 
                 {/* sustom input  */}
