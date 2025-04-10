@@ -70,7 +70,7 @@ form button{
   background-color: #7792c35e;
 }
 table select{
-  width: 50%;
+  width: auto;
   background-color: #c8d2e4;
   border: none;
   font-size: 16px;

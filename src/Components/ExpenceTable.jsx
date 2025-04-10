@@ -3,11 +3,13 @@ import { useState } from "react"
 const ExpenceTable = ({ expences }) => {
     console.log('These are expences', expences)
     const [filterItem, setFilterItems] = useState('')
+    const [updatedExpences, setUpdatedExpence] = useState(expences)
+    console.log('updated', updatedExpences)
 
 
     //filter
 
-    const filterdItems = filterItem === '' || filterItem === 'all' ? expences : expences.filter((item) => item.category.toLowerCase() === filterItem.toLowerCase())
+    const filterdItems = filterItem === '' || filterItem === 'all' ? updatedExpences : updatedExpences.filter((item) => item.category.toLowerCase() === filterItem.toLowerCase())
     console.log('filtered itemssssssss', filterdItems)
 
 
@@ -18,7 +20,16 @@ const ExpenceTable = ({ expences }) => {
 
 
     }, 0)
-    console.log(sumHandler)
+
+
+
+    //Delete Recode
+    const deleteHandler = (id) => {
+
+        const newlist = updatedExpences.filter((items) => items.id !== id)
+        setUpdatedExpence(newlist)
+    }
+
     return (
 
         <>
@@ -45,6 +56,7 @@ const ExpenceTable = ({ expences }) => {
                                 </select>
                             </th>
                             <th>Amount</th>
+                            <th>Delete</th>
                         </tr>
                         {/* <tr>
                             <td>Milk</td>
@@ -60,6 +72,7 @@ const ExpenceTable = ({ expences }) => {
                                     <td>{items.title}</td>
                                     <td>{items.category}</td>
                                     <td>{items.amount}</td>
+                                    <td><button onClick={() => deleteHandler(items.id)}>Delete</button></td>
                                 </tr>
                             })) : (<tr><td colSpan={3}>Expence Not Found</td></tr>)
                         }
