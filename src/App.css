@@ -80,7 +80,12 @@ table select{
 .total{
   font-weight: bold;
 }
-
+.delete_button{
+  background-color: #ff00009e;
+        font-size: 14px;
+        padding: 3px 11px;
+        outline: none;
+}
 
 @media screen and (max-width:767px){
 

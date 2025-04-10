@@ -72,14 +72,14 @@ const ExpenceTable = ({ expences }) => {
                                     <td>{items.title}</td>
                                     <td>{items.category}</td>
                                     <td>{items.amount}</td>
-                                    <td><button onClick={() => deleteHandler(items.id)}>Delete</button></td>
+                                    <td><button className="delete_button" onClick={() => deleteHandler(items.id)}>Delete</button></td>
                                 </tr>
-                            })) : (<tr><td colSpan={3}>Expence Not Found</td></tr>)
+                            })) : (<tr><td colSpan={4}>Expence Not Found</td></tr>)
                         }
 
                         <tr className="total">
                             <td colSpan={2}>Total</td>
-                            <td>{sumHandler}</td>
+                            <td colSpan={2}>{sumHandler}</td>
                         </tr>
                     </tbody>
                 </table>
