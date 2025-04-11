@@ -5,15 +5,21 @@
   text-align: center;
   width: 100%;
 }
-
+.expense_headder{
+  background-color: #435D7D;
+  color: #fff;
+}
 .main{
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: flex;
+ flex-direction: row;
   gap: 50px;
   align-items: start
 }
+.expense_table{
+  width: 50%;
+}
 form{
-  width: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -87,7 +93,18 @@ table select{
         outline: none;
         cursor: pointer;
 }
-
+.sorting_arrow{
+  font-size: 14px;
+  margin-left: 2px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.UpSorting_arrow:hover{
+  transform: translateY(-2px);
+}
+.DownSorting_arrow:hover{
+  transform: translateY(5px);
+}
 @media screen and (max-width:767px){
 
   .main{

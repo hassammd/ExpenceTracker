@@ -3,6 +3,7 @@ import './App.css'
 import ExpenceForm from './Components/ExpenceForm'
 import ExpenceTable from './Components/ExpenceTable'
 import { ExpenceData } from './Components/ExpenceData'
+import ExpenseHeader from './Components/ExpenseHeader'
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
   console.log(expences)
   return (
     <>
-      <h2>Expence Tracker</h2>
+      <ExpenseHeader />
       <div className='main'>
         <ExpenceForm setEditExpence={setEditExpence} editExpence={editExpence} expences={expences} setExpences={setExpences} />
         <ExpenceTable editExpence={editExpence} setEditExpence={setEditExpence} expences={expences} setExpences={setExpences} />

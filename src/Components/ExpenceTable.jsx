@@ -1,9 +1,30 @@
-import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown, faArrowUp, faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
 const ExpenseTable = ({ expences, setEditExpence, setExpences }) => {
     const [filterItem, setFilterItem] = useState("");
+    const [sorting, setSorting] = useState(true)
+
+
+
+
+    //sorting
+
+    const dataSorting = () => {
+        const sorted = [...expences].sort((a, b) => {
+
+            if (sorting) {
+                return a.amount - b.amount
+            } else {
+                return b.amount - a.amount
+            }
+
+        })
+        setExpences(sorted)
+        setSorting(!sorting)
+    }
+    //sorting
 
     // Handle edit
     const handleEdit = (item) => {
@@ -31,7 +52,7 @@ const ExpenseTable = ({ expences, setEditExpence, setExpences }) => {
     );
 
     return (
-        <div>
+        <div className="expense_table">
             <h3 className="table_heading">Your Expenses</h3>
             <table>
                 <thead>
@@ -48,7 +69,7 @@ const ExpenseTable = ({ expences, setEditExpence, setExpences }) => {
                                 <option value="bill">Bill</option>
                             </select>
                         </th>
-                        <th>Amount</th>
+                        <th>Amount <FontAwesomeIcon onClick={dataSorting} className="sorting_arrow UpSorting_arrow" icon={faArrowUp} /><FontAwesomeIcon className="sorting_arrow DownSorting_arrow" icon={faArrowDown} /></th>
                         <th>Actions</th>
                     </tr>
                 </thead>

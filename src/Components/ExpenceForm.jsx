@@ -132,6 +132,8 @@ const ExpenceForm = ({ expences, setExpences, editExpence, setEditExpence }) => 
     return (
 
         <>
+
+
             <form onSubmit={submitHandler}>
                 <h3 className="form_heading">Add Your Expences</h3>
 
