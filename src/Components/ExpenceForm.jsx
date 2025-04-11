@@ -3,7 +3,7 @@ import Input from "./input"
 import Select from "./Select"
 
 
-const ExpenceForm = ({ expences, setExpences, editExpence }) => {
+const ExpenceForm = ({ expences, setExpences, editExpence, setEditExpence }) => {
 
     const [title, setTitle] = useState('')
     const [category, setCategory] = useState('')
@@ -89,6 +89,13 @@ const ExpenceForm = ({ expences, setExpences, editExpence }) => {
                 console.log('Updated Expense', updatedExpences)
                 setExpences(updatedExpences)
                 setErrors({})
+                setTitle('')
+                setCategory('')
+                setAmount('')
+                setEmail('')
+                setEditExpence(null)
+
+
             } else {
                 setExpences((prev) => [...prev, newExpences])
                 setTitle('')
@@ -168,7 +175,11 @@ const ExpenceForm = ({ expences, setExpences, editExpence }) => {
                     <p className="error">{errors.amount}</p>
                 </div> */}
                 <div>
-                    <button>Add</button>
+
+                    {
+                        editExpence ? <button>Eidt</button> : <button>Add</button>
+                    }
+
                 </div>
             </form>
 
