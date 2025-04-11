@@ -1,16 +1,19 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Input from "./input"
 import Select from "./Select"
 
 
-const ExpenceForm = ({ expences, setExpences }) => {
+const ExpenceForm = ({ expences, setExpences, editExpence }) => {
 
     const [title, setTitle] = useState('')
     const [category, setCategory] = useState('')
     const [amount, setAmount] = useState('')
     const [email, setEmail] = useState('')
     const [errors, setErrors] = useState({})
+    // const [myExpences, setMyExpences] = useState(expences)
 
+
+    console.log('Edit expence from table', editExpence)
 
     // ValidationConfig
     const ValidationConfig = {
@@ -23,12 +26,38 @@ const ExpenceForm = ({ expences, setExpences }) => {
     }
     console.log(ValidationConfig)
     // ValidationConfig
+    //for edit
+
+    useEffect(() => {
+        if (editExpence) {
+
+            const { title, category, email, amount } = editExpence
+
+            setTitle(title)
+            setAmount(amount)
+            setEmail(email)
+            setCategory(category)
+
+        }
+    }, [editExpence])
+
+
+
+    //for edit
+
+
+
+
+
+
+
+
 
     const submitHandler = (e) => {
         e.preventDefault()
         const error = {}
 
-        const newExpences = { title, category, amount, email, id: crypto.randomUUID() }
+        const newExpences = { title, category, amount, email, id: editExpence ? editExpence.id : crypto.randomUUID() }
         Object.entries(newExpences).forEach(([key, value]) => {
             if (ValidationConfig[key]) {
 
@@ -53,12 +82,21 @@ const ExpenceForm = ({ expences, setExpences }) => {
             setErrors(error)
             console.log(errors)
         } else {
-            setExpences((prev) => [...prev, newExpences])
-            setTitle('')
-            setCategory('')
-            setAmount('')
-            setEmail('')
-            setErrors({})
+
+            if (editExpence) {
+                // Updating expense if editExpence exists
+                const updatedExpences = expences.map((item) => item.id === editExpence.id ? newExpences : item)
+                console.log('Updated Expense', updatedExpences)
+                setExpences(updatedExpences)
+                setErrors({})
+            } else {
+                setExpences((prev) => [...prev, newExpences])
+                setTitle('')
+                setCategory('')
+                setAmount('')
+                setEmail('')
+                setErrors({})
+            }
         }
         // if (!newExpences.title) {
         //     error.title = 'Enter Title'
