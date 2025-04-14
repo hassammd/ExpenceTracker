@@ -160,7 +160,7 @@ const ExpenceForm = ({ expences, setExpences, editExpence, setEditExpence }) => 
 
 
                 <form onSubmit={submitHandler}>
-                    <h3 className="form_heading">Add Your Expences</h3>
+                    <h3 className="form_heading">Add Your Expenses</h3>
 
                     {/* sustom input  */}
 
@@ -204,7 +204,7 @@ const ExpenceForm = ({ expences, setExpences, editExpence, setEditExpence }) => 
                     <div>
 
                         {
-                            editExpence ? <button>Eidt</button> : <button>Add</button>
+                            editExpence ? <button>Edit</button> : <button>Add</button>
                         }
 
                     </div>

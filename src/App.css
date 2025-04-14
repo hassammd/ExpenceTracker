@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0px 20px;
+  border-radius: 5px;
 }
 .expense_headder h2{
   margin: 0px;
@@ -39,6 +40,9 @@ form{
 }
 form button{
   width: 100%;
+  padding: 9px 0px;
+  background-color: #435d7d;
+  color: #fff;
 }
 form div{
   position: relative;
@@ -94,9 +98,7 @@ table tr:nth-child(odd){
   margin-top: 0px;
   margin-bottom: 20px;
 }
-form button{
-  background-color: #7792c35e;
-}
+
 table select{
   width: auto;
   background-color: #c8d2e4;
@@ -112,10 +114,10 @@ table select{
 }
 .delete_button{
   color: #ff00009e;
-        font-size: 14px;
-        padding: 3px 11px;
-        outline: none;
-        cursor: pointer;
+  font-size: 14px;
+  padding: 3px 11px;
+  outline: none;
+  cursor: pointer;
 }
 .sorting_arrow{
   font-size: 14px;
@@ -128,6 +130,9 @@ table select{
 }
 .DownSorting_arrow:hover{
   transform: translateY(5px);
+}
+button:focus, button:focus-visible {
+  outline: 0px auto -webkit-focus-ring-color;
 }
 @media screen and (max-width:767px){
 
