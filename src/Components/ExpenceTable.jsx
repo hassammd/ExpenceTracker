@@ -7,7 +7,11 @@ const ExpenseTable = ({ expences, setEditExpence, setExpences }) => {
     const [sorting, setSorting] = useState(true)
 
 
+    ////
 
+
+
+    /////
 
     //sorting
 
@@ -47,8 +51,7 @@ const ExpenseTable = ({ expences, setEditExpence, setExpences }) => {
 
     // Total calculation
     const totalAmount = filteredItems.reduce(
-        (acc, item) => acc + Number(item.amount),
-        0
+        (acc, item) => acc + Number(item.amount), 0
     );
 
     return (
@@ -75,8 +78,8 @@ const ExpenseTable = ({ expences, setEditExpence, setExpences }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {expences.length > 0 ? (
-                        expences.map((item, index) => (
+                    {filteredItems.length > 0 ? (
+                        filteredItems.map((item, index) => (
                             <tr key={index}>
                                 <td>{item.title}</td>
                                 <td>{item.category}</td>
@@ -103,7 +106,8 @@ const ExpenseTable = ({ expences, setEditExpence, setExpences }) => {
 
                     <tr className="total">
                         <td colSpan={2}>Total</td>
-                        <td colSpan={2}>{totalAmount}</td>
+                        <td colSpan={1}>Rs {totalAmount}</td>
+                        <td colSpan={1}></td>
                     </tr>
                 </tbody>
             </table>

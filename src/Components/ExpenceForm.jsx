@@ -156,33 +156,35 @@ const ExpenceForm = ({ expences, setExpences, editExpence, setEditExpence }) => 
 
         <>
 
+            <div className="expense_form">
 
-            <form onSubmit={submitHandler}>
-                <h3 className="form_heading">Add Your Expences</h3>
 
-                {/* sustom input  */}
+                <form onSubmit={submitHandler}>
+                    <h3 className="form_heading">Add Your Expences</h3>
 
-                <Input value={title} label={'Title'} error={errors.title} name={'title'} onChange={(e) => setTitle(e.target.value)} className={'error'} />
-                <Input value={email} label={'Email'} error={errors.email} name={'Email'} onChange={(e) => setEmail(e.target.value)} className={'error'} />
+                    {/* sustom input  */}
 
-                {/* <div>
+                    <Input value={title} label={'Title'} error={errors.title} name={'title'} onChange={(e) => setTitle(e.target.value)} className={'error'} />
+                    <Input value={email} label={'Email'} error={errors.email} name={'Email'} onChange={(e) => setEmail(e.target.value)} className={'error'} />
+
+                    {/* <div>
                     <label htmlFor="">Title</label>
                     <input type="text" value={title} name="title" onChange={(e) => setTitle(e.target.value)} />
                     <p className="error">{errors.title}</p>
                 </div> */}
 
-                <Select
-                    label={'Category'}
-                    options={['Grocery', 'Education', 'Bill']}
-                    defaultOption={'Select Category'}
-                    value={category}
-                    name={'category'}
-                    error={errors.category}
-                    onChange={(e) => setCategory(e.target.value)} />
+                    <Select
+                        label={'Category'}
+                        options={['Grocery', 'Education', 'Bill']}
+                        defaultOption={'Select Category'}
+                        value={category}
+                        name={'category'}
+                        error={errors.category}
+                        onChange={(e) => setCategory(e.target.value)} />
 
 
 
-                {/* <div>
+                    {/* <div>
                     <label htmlFor="">Category</label>
                     <select name="" id="" value={category} onChange={(e) => setCategory(e.target.value)}>
                         <option hidden>Select Category</option>
@@ -192,22 +194,22 @@ const ExpenceForm = ({ expences, setExpences, editExpence, setEditExpence }) => 
                     </select>
                     <p className="error">{errors.category}</p>
                 </div> */}
-                <Input label={'Amount'} value={amount} error={errors.amount} name={'amount'} onChange={(e) => setAmount(e.target.value)} className={'error'} />
+                    <Input label={'Amount'} value={amount} error={errors.amount} name={'amount'} onChange={(e) => setAmount(e.target.value)} className={'error'} />
 
-                {/* <div>
+                    {/* <div>
                     <label htmlFor="">Amount</label>
                     <input type="text" value={amount} onChange={(e) => setAmount(e.target.value)} />
                     <p className="error">{errors.amount}</p>
                 </div> */}
-                <div>
+                    <div>
 
-                    {
-                        editExpence ? <button>Eidt</button> : <button>Add</button>
-                    }
+                        {
+                            editExpence ? <button>Eidt</button> : <button>Add</button>
+                        }
 
-                </div>
-            </form>
-
+                    </div>
+                </form>
+            </div>
 
         </>
     )
