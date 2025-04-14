@@ -15,6 +15,29 @@ const ExpenceForm = ({ expences, setExpences, editExpence, setEditExpence }) => 
 
     console.log('Edit expence from table', editExpence)
 
+
+    //get Expenses from local storage
+    useEffect(() => {
+        const storedExpenses = JSON.parse(localStorage.getItem('expences'))
+        if (storedExpenses) {
+            setExpences(storedExpenses)
+            console.log('get data from localstorage', storedExpenses)
+        }
+
+    }, [])
+    //get Expenses from local storage
+
+
+    // store expenses in local storage
+    useEffect(() => {
+        localStorage.setItem('expences', JSON.stringify(expences)) //set data in localStorage
+
+    }, [expences])
+    // store expenses in local storage
+
+
+
+
     // ValidationConfig
     const ValidationConfig = {
 

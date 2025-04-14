@@ -69,7 +69,8 @@ const ExpenseTable = ({ expences, setEditExpence, setExpences }) => {
                                 <option value="bill">Bill</option>
                             </select>
                         </th>
-                        <th>Amount <FontAwesomeIcon onClick={dataSorting} className="sorting_arrow UpSorting_arrow" icon={faArrowUp} /><FontAwesomeIcon className="sorting_arrow DownSorting_arrow" icon={faArrowDown} /></th>
+                        <th>Amount <FontAwesomeIcon onClick={dataSorting} className="sorting_arrow UpSorting_arrow" icon={faArrowUp} /><FontAwesomeIcon onClick={dataSorting} className="sorting_arrow DownSorting_arrow" icon={faArrowDown} /></th>
+
                         <th>Actions</th>
                     </tr>
                 </thead>
