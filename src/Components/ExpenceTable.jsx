@@ -1,6 +1,7 @@
 import { faArrowDown, faArrowUp, faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import PageShadow from "./PageShadow";
 
 const ExpenseTable = ({ expences, setEditExpence, setExpences }) => {
     const [filterItem, setFilterItem] = useState("");
@@ -111,7 +112,9 @@ const ExpenseTable = ({ expences, setEditExpence, setExpences }) => {
                     </tr>
                 </tbody>
             </table>
+
         </div>
+
     );
 };
 

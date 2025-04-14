@@ -154,6 +154,7 @@ button:focus, button:focus-visible {
 }
 .expense_form{
   width: auto;
+  border-radius: 7px;
 }
 form label{
   font-size: 14px;
@@ -165,6 +166,12 @@ form label{
   bottom: -17px;
   font-size: 13px;
 }
-
-
+table tr td {
+  padding: 6px 0px;
+  font-size: 14px;
+}
+.expense_headder{
+  padding: 10px 10px;
+  justify-content: space-between;
+}
 }

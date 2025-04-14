@@ -1,5 +1,6 @@
 import { faDownload, faFileArrowDown } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import PageShadow from "./PageShadow"
 
 const ExpenseHeader = ({ expences }) => {
 
@@ -41,6 +42,7 @@ const ExpenseHeader = ({ expences }) => {
                 <button onClick={CsvDownload}>Download CSV <FontAwesomeIcon icon={faDownload} /></button>
 
             </div>
+            <PageShadow />
         </>
     )
 }

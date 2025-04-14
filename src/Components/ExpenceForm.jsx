@@ -209,7 +209,9 @@ const ExpenceForm = ({ expences, setExpences, editExpence, setEditExpence }) => 
 
                     </div>
                 </form>
+
             </div>
+
 
         </>
     )
