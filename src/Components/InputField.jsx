@@ -1,4 +1,4 @@
-const Input = ({ value, error, name, onChange, className, label }) => {
+const InputField = ({ value, error, name, onChange, className, label }) => {
 
 
     return <div>
@@ -7,4 +7,4 @@ const Input = ({ value, error, name, onChange, className, label }) => {
         <p className={className}>{error}</p>
     </div>
 }
-export default Input
+export default InputField

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import Input from "./input"
-import Select from "./Select"
+import InputField from "./InputField"
+import SelectField from "./SelectField"
 
 
 const ExpenceForm = ({ expences, setExpences, editExpence, setEditExpence }) => {
@@ -164,8 +164,8 @@ const ExpenceForm = ({ expences, setExpences, editExpence, setEditExpence }) => 
 
                     {/* sustom input  */}
 
-                    <Input value={title} label={'Title'} error={errors.title} name={'title'} onChange={(e) => setTitle(e.target.value)} className={'error'} />
-                    <Input value={email} label={'Email'} error={errors.email} name={'Email'} onChange={(e) => setEmail(e.target.value)} className={'error'} />
+                    <InputField value={title} label={'Title'} error={errors.title} name={'title'} onChange={(e) => setTitle(e.target.value)} className={'error'} />
+                    <InputField value={email} label={'Email'} error={errors.email} name={'Email'} onChange={(e) => setEmail(e.target.value)} className={'error'} />
 
                     {/* <div>
                     <label htmlFor="">Title</label>
@@ -173,7 +173,7 @@ const ExpenceForm = ({ expences, setExpences, editExpence, setEditExpence }) => 
                     <p className="error">{errors.title}</p>
                 </div> */}
 
-                    <Select
+                    <SelectField
                         label={'Category'}
                         options={['Grocery', 'Education', 'Bill']}
                         defaultOption={'Select Category'}
@@ -194,7 +194,7 @@ const ExpenceForm = ({ expences, setExpences, editExpence, setEditExpence }) => 
                     </select>
                     <p className="error">{errors.category}</p>
                 </div> */}
-                    <Input label={'Amount'} value={amount} error={errors.amount} name={'amount'} onChange={(e) => setAmount(e.target.value)} className={'error'} />
+                    <InputField label={'Amount'} value={amount} error={errors.amount} name={'amount'} onChange={(e) => setAmount(e.target.value)} className={'error'} />
 
                     {/* <div>
                     <label htmlFor="">Amount</label>

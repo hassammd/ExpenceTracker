@@ -18,7 +18,6 @@ const ExpenseHeader = ({ expences }) => {
             const a = document.createElement('a')
             a.href = url
             a.download = "Expenses.csv"
-            console.log(a.download)
             a.click()
             URL.revokeObjectURL()
 
@@ -36,8 +35,8 @@ const ExpenseHeader = ({ expences }) => {
         <>
             <div className='expense_headder'>
 
-                <span></span>
-                <h2 >Expence Tracker</h2>
+
+                <h2 >Expense Tracker</h2>
                 {/* <span ><FontAwesomeIcon icon={faFileArrowDown} className="csv_download_btn" /></span> */}
                 <button onClick={CsvDownload}>Download CSV <FontAwesomeIcon icon={faDownload} /></button>
 

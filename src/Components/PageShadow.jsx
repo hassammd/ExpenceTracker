@@ -3,7 +3,7 @@ const PageShadow = () => {
     return (
 
         <>
-            <div>
+            <div className='chadow_image'>
                 <img src={shadowImage} alt="" />
             </div>
         </>

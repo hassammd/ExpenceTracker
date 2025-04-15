@@ -1,4 +1,4 @@
-const Select = ({ onChange, error, name, value, label, options, defaultOption }) => {
+const SelectField = ({ onChange, error, name, value, label, options, defaultOption }) => {
 
     // console.log('these aadfa', options)
 
@@ -24,4 +24,4 @@ const Select = ({ onChange, error, name, value, label, options, defaultOption })
     )
 }
 
-export default Select
+export default SelectField
